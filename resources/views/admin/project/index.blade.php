@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="col-12 py-5">
                     <h1 class="title">I tuoi progetti</h1>
-                    <a href="" class="btn btn-success">Aggiungi progetto</a>
+                    <a href="{{route('admin.project.create')}}" class="btn btn-success">Aggiungi progetto</a>
                 </div>
                 @forelse ($projects as $project)
                     <div class="col-3">

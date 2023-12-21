@@ -16,8 +16,12 @@
                         {{ session('status') }}
                     </div>
                     @endif
-
+                    
                     {{ __('You are logged in!') }}
+                    <div>
+                        
+                        <a href="admin/project">Vedi progetti</a>
+                    </div>
                 </div>
             </div>
         </div>

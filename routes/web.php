@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,3 +30,12 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+Route::middleware('auth')
+->name('admin.')
+->prefix('admin')
+->group(function(){
+    // Route::get('/',[ProjectController::class,'index'])->name('index');
+
+    Route::resource('project', ProjectController::class);
+});

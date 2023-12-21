@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col">
                     <ul>
-                        <li>{{$project->title}}</li>
+                        <li>{{$project->name}}</li>
                         <li>{{$project->language}}</li>
                     </ul>
                     

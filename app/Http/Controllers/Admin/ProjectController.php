@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Project;
+use Illuminate\Contracts\Validation\Rule;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule as ValidationRule;
 
 class ProjectController extends Controller
 {
@@ -62,8 +64,12 @@ class ProjectController extends Controller
      */
     public function update(Request $request, Project $project)
     {
+        $request->validate([
+            'name' => ['required','max:255','string',ValidationRule::unique('projects')->ignore($project->id)],
+            'language' => 'required|max:100|string'
+        ]);
         $data = $request->all();
-        //dd($data);
+        
         $project->update($data);
         return redirect()->route('admin.project.show', $project->id);
     }

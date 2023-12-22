@@ -19,7 +19,7 @@
                                     <li><a class="btn btn-sm btn-primary" href="{{route('admin.project.edit',$project)}}">Edit</a></li>
 
                                     <li>
-                                        <form action="" method="POST">
+                                        <form action="{{route('admin.project.destroy',$project)}}" method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <button class="btn btn-danger">Delete</button>

@@ -20,8 +20,16 @@
 
                 <button type="submit" class="btn btn-success">Aggiungi</button>
             </form>
-
-            
+             {{-- questo if mi permette di vedere il messaggio di errore quando modifico un elemento  --}}
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
         </div>
     </div>
 </div>
